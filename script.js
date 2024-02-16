@@ -1,19 +1,13 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // ページロード完了時のアニメーション
-    document.body.style.opacity = '1';
+// Assuming you're using vanilla JavaScript and not jQuery based on your script.js file
+function toggleMenu() {
+    const navbar = document.getElementById("navbar");
+    const openButton = document.querySelector('.openbtn2');
 
-    // スクロールに応じたコンテンツの表示
-    window.addEventListener('scroll', function() {
-        // ここにスクロールに応じたアニメーション表示のロジックを追加
-    });
+    // Toggle the 'active' class on both the navbar and open button
+    navbar.classList.toggle('active');
+    openButton.classList.toggle('active');
+}
 
-    // ナビゲーションメニューのスムーズスクロール
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-    });
-});
+// Get the openbtn2 element and attach the event listener
+const openButton = document.querySelector('.openbtn2');
+openButton.addEventListener('click', toggleMenu);

@@ -1,69 +1,142 @@
-body {
+body, html {
+    margin: 0;
+    padding: 0;
     font-family: 'Noto Sans JP', sans-serif;
-    line-height: 1.6;
-    color: #333;
-    margin: 0;
-    padding: 0;
+    background-color: #fff;
+    overflow-x: hidden; /* 横スクロールを防ぐ */
 }
 
-header {
-    background-color: #f9f9f9;
-    padding: 20px 0;
-    text-align: center;
+.wrapper {
+    max-width: 800px; /* 最大幅を800pxに設定 */
+    margin: auto; /* 中央揃え */
+    padding-top: 60px; /* ヘッダーの高さ分のパディングを追加 */
+    box-sizing: border-box; /* パディングを含む */
 }
 
-header h1 {
-    margin: 0;
+.header {
+    background-color: transparent; /* ヘッダーの背景を透明に */
+    position: fixed; /* ヘッダーを画面上部に固定 */
+    top: 0; /* 画面の最上部から配置 */
+    left: 0; /* 画面の最左部から配置 */
+    width: 100%; /* 幅を画面全体に */
+    z-index: 10; /* 他の要素より前面に表示 */
+    padding: 20px 0; /* パディングを適用 */
+    box-sizing: border-box; /* ボックスサイジングをborder-boxに設定 */
+    display: flex; /* フレックスボックスを使用 */
+    justify-content: center; /* 中央揃え */
+    align-items: center; /* アイテムを中央揃え */
+}
+.header.scrolled {
+    background-color: #fff; /* Adjust the color and opacity as needed */
+  }
+
+.logo img {
+    width: 200px;
 }
 
-nav ul {
-    list-style: none;
-    padding: 0;
+/*==================================================
+　5-2-2 2本線が×に
+===================================*/
+
+/*ボタン外側※レイアウトによってpositionや形状は適宜変更してください*/
+.openbtn2{
+    position: fixed;/*ボタン内側の基点となるためrelativeを指定*/
+    width: 50px;
+    height:50px;    
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    background:#fff;
+    z-index: 2;
+}
+/*ボタン内側*/
+.openbtn2 span{
+    display: inline-block;
+    transition: all .4s;/*アニメーションの設定*/
+    position: absolute;
+    left: 13px;
+    height: 2px;
+  background-color: #666;
+  }
+  
+.openbtn2 span:nth-of-type(1) {
+  top:22px; 
+    width: 50%;
+}
+.openbtn2 span:nth-of-type(2) {
+  top:29px;
+    width:30%;
+}
+/*activeクラスが付与されると線が回転して×に*/
+.openbtn2.active span:nth-of-type(1) {
+    top: 20px;
+    left: 16px;
+    transform: translateY(6px) rotate(-45deg);
+    width: 35%;
+}
+.openbtn2.active span:nth-of-type(2) {
+    top: 32px;
+    left: 16px;
+    transform: translateY(-6px) rotate(45deg);
+    width: 35%;
 }
 
-nav ul li {
-
-    display: inline;
-    margin: 0 15px;
+nav#navbar {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: #fff;
+    width: 50%;
+    max-width: 300px;
+    height: 100%;
+    padding-top: 60px;
 }
 
-nav ul li a {
-    text-decoration: none;
-    color: #333;
+nav#navbar ul {
+    flex-direction: column;
 }
 
-#features {
-    background-color: #eef2f5;
-    padding: 50px 20px;
-    text-align: center;
+.nav {
+    display: none;
 }
 
-.feature-item {
-    margin-bottom: 30px;
+/* Modern Navbar Styles */
+nav#navbar.active {
+    transform: translateY(0); /* Show the navbar */
+    display: flex; /* Use flexbox for better alignment */
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center items vertically */
+    align-items: center; /* Center items horizontally */
+    background-color: #ffffff; /* Light background for the menu */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    padding: 20px; /* Spacing around the menu */
 }
 
-.feature-item img {
-    width: 80%;
-    height: 450px;
-    object-fit: cover;
+nav#navbar.active ul {
+    width: 100%; /* Full width of the navbar */
+    margin: 0; /* Reset margin */
+    padding: 0; /* Reset padding */
+    list-style-type: none; /* No bullet points */
 }
 
-#about h2 {    
-    padding: 50px 20px;
-    padding-left: 10%;
-    padding-right: 10%;
-    text-align: center;
+nav#navbar.active ul li {
+    width: 100%; /* Full width of the list item */
+    margin: 10px 0; /* Spacing between menu items */
 }
 
-#about {
-    padding: 50px 20px;
-    padding-left: 10%;
-    padding-right: 10%;
-    /*text-align: center;*/
+nav#navbar.active ul li a {
+    display: block; /* Block-level links for easier click */
+    text-align: center; /* Center text */
+    font-size: 18px; /* Larger font size */
+    font-weight: 500; /* Medium font weight */
+    color: #333333; /* Dark grey color for text */
+    padding: 10px 20px; /* Padding inside the links */
+    text-decoration: none; /* No underline */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
 }
 
-footer {
-    background-color: #f9f9f9;
-    text-align: center;
-    padding: 20px 0;
+nav#navbar.active ul li a:hover {
+    background-color: #f2f2f2; /* Light grey background on hover */
+    color: #1a1a1a; /* Slightly darker text on hover */
 }
