@@ -28,7 +28,7 @@ body, html {
 }
 
 .footer {
-    background-color: #fff;
+    background-color: #dddddd;
     text-align: center;
     padding: 20px 0;
 }
@@ -40,6 +40,11 @@ body, html {
     box-sizing: border-box; /* パディングを含む */
 }
 .wrapper h3{
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.wrapper p{
     text-align: center;
     padding-top: 10px;
     padding-bottom: 10px;
