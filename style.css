@@ -4,6 +4,9 @@ body, html {
     font-family: 'Noto Sans JP', sans-serif;
     background-color: #fff;
     overflow-x: hidden; /* 横スクロールを防ぐ */
+    max-width: 1200px;
+    display: block;
+    margin: auto;
 }
 
 .header {
@@ -28,7 +31,6 @@ body, html {
 }
 
 .footer {
-    background-color: #f2f2f2;
     text-align: center;
     padding: 20px 0;
     font-size: small;
@@ -53,6 +55,17 @@ body, html {
     padding-top: 20px;
 }
 
+.wrapper iframe{
+    padding-top: 20px;
+    top: 0;
+    left: 0;
+    height: 300px;
+    width: 100%;
+    max-width: 800px;
+    border: none;
+    text-align: center;
+}
+
 .top-feature {
     text-align: center;
 }
@@ -65,6 +78,14 @@ body, html {
     margin: auto;
     display: block;
     object-fit: cover;
+}
+
+.center-feature p {
+    text-align: left;
+}
+
+.center-feature .youtube{
+    text-align: center;
 }
 
 .features {
