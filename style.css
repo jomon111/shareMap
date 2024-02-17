@@ -40,29 +40,33 @@ body, html {
     padding-top: 100px; /* ヘッダーの高さ分のパディングを追加 */
     box-sizing: border-box; /* パディングを含む */
 }
-.h3{
+
+.wrapper p{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #404040;
+    font-size: smaller;
+}
+
+.wrapper h3{
     text-align: center;
     padding-top: 20px;
-    padding-bottom: 10px;
 }
-.wrapper p{
-    text-align: left;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    font-size: small;
-    color: #404040;
-}
-.top-feature{
+
+.top-feature {
     text-align: center;
 }
+
 .top-feature img{
     padding-top: 10px;
+    padding-bottom: 10px;
     height: 500px;
     width: 100%;
     margin: auto;
     display: block;
     object-fit: cover;
 }
+
 .features {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
