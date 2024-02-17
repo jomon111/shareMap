@@ -28,9 +28,10 @@ body, html {
 }
 
 .footer {
-    background-color: #dddddd;
+    background-color: #f2f2f2;
     text-align: center;
     padding: 20px 0;
+    font-size: small;
 }
 
 .wrapper {
@@ -41,13 +42,15 @@ body, html {
 }
 .wrapper h3{
     text-align: center;
-    padding-top: 10px;
+    padding-top: 20px;
     padding-bottom: 10px;
 }
 .wrapper p{
-    text-align: center;
+    text-align: left;
     padding-top: 10px;
     padding-bottom: 10px;
+    font-size: small;
+    color: #404040;
 }
 .top-feature{
     text-align: center;
