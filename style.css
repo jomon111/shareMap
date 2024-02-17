@@ -116,6 +116,49 @@ body, html {
     color: #666666;
 }
 
+/* ボタンのスタイル */
+.buttonIconText02 {
+    margin: auto;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    max-width: 320px;
+    height: 64px;
+    padding: 8px 64px 8px 8px;
+    font-family: sans-serif;
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    overflow-wrap: anywhere;
+    background-color: #008080;
+    border-radius: 32px; /* (buttonの高さ / 2) の値 */
+  }
+  
+  .buttonIconText02__reverse {
+    flex-direction: row-reverse;
+    padding: 8px 8px 8px 64px;
+  }
+  
+  .buttonIconText02_icon {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    aspect-ratio: 1;
+    overflow: hidden;
+  }
+  
+  .buttonIconText02_text {
+    flex-shrink: 1;
+    width: 100%;
+  }
+
+  /* 左矢印アイコンのスタイル */
+.iconArrowLeft {
+    rotate: 180deg;
+}
+
 /*==================================================
 　5-2-2 2本線が×に
 ===================================*/
